@@ -44,3 +44,11 @@ def cal2_view(request, x, op, y):
 def birthday_view(request, y, m, d):
     html = "生日为%s年%s月%s日" % (y, m, d)
     return HttpResponse(html)
+
+
+def test_request(request):
+    print('path info is', request.path_info)
+    print('method is ', request.method)
+    print('querystring is ', request.GET)
+    print('full path is', request.get_full_path())
+    return HttpResponse('test request ok')

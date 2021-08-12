@@ -32,4 +32,7 @@ urlpatterns = [
     re_path(r'^birthday/(?P<y>\d{4})/(?P<m>\d{1,2})/(?P<d>\d{1,2})$', views.birthday_view),
     # http://127.0.0.1:8000/birthday/月2/日2/年4
     re_path(r'^birthday/(?P<m>\d{1,2})/(?P<d>\d{1,2})/(?P<y>\d{4})$', views.birthday_view),
+
+    #  day 02
+    path('test_request', views.test_request),
 ]
