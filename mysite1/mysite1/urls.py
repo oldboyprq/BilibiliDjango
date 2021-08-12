@@ -35,4 +35,9 @@ urlpatterns = [
 
     #  day 02
     path('test_request', views.test_request),
+    path('test_get_post', views.test_get_post),
+    path('test_html',views.test_html),
+    path('test_html_param', views.test_html_param),
+    path('test_if_for', views.test_if_for),
+    path('mycal',views.test_mycal)
 ]
