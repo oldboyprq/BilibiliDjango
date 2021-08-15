@@ -39,5 +39,10 @@ urlpatterns = [
     path('test_html',views.test_html),
     path('test_html_param', views.test_html_param),
     path('test_if_for', views.test_if_for),
-    path('mycal',views.test_mycal)
+    path('mycal',views.test_mycal),
+    path('base_index', views.base_view, name='base_index'),
+    path('music_index', views.music_view),
+    path('sport_index', views.sport_view),
+    path('test/url', views.test_url),
+    path('test_urls_results/<int:age>', views.test_url_result, name='tr')
 ]

@@ -96,12 +96,13 @@ def test_html(request):
 def test_html_param(request):
     from django.shortcuts import render
     dic = dict()
-    dic['int'] = 99
+    dic['int'] = 88
     dic['str'] = 'xiaomao'
     dic['lst'] = ['tony', 'jack', 'lily']
     dic['dict'] = {'a': 9, 'b': 10}
     dic['func'] = say_hi
     dic['class_obj'] = dog()
+    dic['script'] = '<script>alert(1111)</script>'
 
     return render(request, 'test_html_param.html', dic)
 
@@ -118,7 +119,7 @@ class dog:
 def test_if_for(request):
     dic = dict()
     dic['x'] = 10
-    dic['lst'] = ['tom','jack','lily']
+    dic['lst'] = ['tom', 'jack', 'lily']
     return render(request, 'test_if_for.html', dic)
 
 
@@ -140,3 +141,28 @@ def test_mycal(request):
 
         # locals()可以自动封装一个字典，省事
         return render(request, 'mycal.html', locals())
+
+
+def base_view(request):
+    lst = ['tony', 'jack']
+    return render(request, 'base.html', locals())
+
+
+def music_view(request):
+    return render(request, 'music.html')
+
+
+def sport_view(request):
+    return render(request, 'sport.html')
+
+
+def test_url(request):
+    return render(request, 'test_url.html')
+
+
+def test_url_result(request,age):
+    # 302跳转
+    from django.urls import reverse
+    url = reverse('base_index')
+    return HttpResponseRedirect(url)
+    # return HttpResponse('--test url res is ok')
