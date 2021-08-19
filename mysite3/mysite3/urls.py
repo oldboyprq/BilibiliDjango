@@ -24,4 +24,5 @@ urlpatterns = [
     path('music/', include('music.urls')),  # 匹配主路由
     path('sport/', include('sport.urls')),
     path('news/', include('news.urls')),
+    path('bookstore/', include('bookstore.urls')),
 ]
