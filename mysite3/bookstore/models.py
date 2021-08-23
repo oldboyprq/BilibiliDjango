@@ -10,13 +10,13 @@ class Book(models.Model):
     pub = models.CharField("出版社", max_length=100, default='')
     # info = models.CharField('描述', max_length=100, default='')
     market_price = models.DecimalField("零售价", max_digits=7, decimal_places=2, default=0.0)
+    is_active = models.BooleanField('是否活跃', default=True)
 
     class Meta:
         db_table = 'book'  # 改表名
 
     def __str__(self):
-
-        return '%s_%s_%s_%s' % (self.title,self.price,self.market_price,self.pub)
+        return '%s_%s_%s_%s' % (self.title, self.price, self.market_price, self.pub)
 
 
 class Author(models.Model):
