@@ -13,7 +13,9 @@ class Book(models.Model):
     is_active = models.BooleanField('是否活跃', default=True)
 
     class Meta:
-        db_table = 'book'  # 改表名
+        db_table = 'book'  # 改数据库表名
+        verbose_name = "图书"
+        verbose_name_plural = verbose_name
 
     def __str__(self):
         return '%s_%s_%s_%s' % (self.title, self.price, self.market_price, self.pub)
