@@ -25,4 +25,8 @@ urlpatterns = [
     path('sport/', include('sport.urls')),
     path('news/', include('news.urls')),
     path('bookstore/', include('bookstore.urls')),
+    path('set_cookies',views.set_cookies),
+    path('get_cookies',views.get_cookies),
+    path('set_session',views.set_session),
+    path('get_session',views.get_session)
 ]
